@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>{{titulo}}</h2>
+    <!-- mostrará la tabla cuando la lista de productos esté cargada -->
+    <div *ngIf="cargoLista">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Categoría</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of productos">
+            <th scope="row">{{producto.id_prod}}</th>
+            <td>{{producto.des_prod}}</td>
+            <td>{{producto.stk_prod}}</td>
+            <td>{{producto.pre_prod}}</td>
+            <td>{{producto.objCategoria.descripcion}}</td>
+            <td><a href="" class="btn btn-outline-primary"><i class="fa-solid fa-pen-to-square"></i> Editar</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
